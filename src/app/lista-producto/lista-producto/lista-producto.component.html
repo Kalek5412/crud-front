@@ -1,0 +1,24 @@
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">precio</th>
+            <th scope="col">ver</th>
+            <th scope="col">editar</th>
+            <th scope="col">borrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos; index as i">
+            <td>{{i+1}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.precio}}</td>
+            <td><button class="btn btn-outline-primary" routerLink="/detalle/{{producto.id}}"><i class="fa-solid fa-pen-to-eye"></i>ver</button></td>
+            <td><button class="btn btn-outline-warning" routerLink="/editar/{{producto.id}}"><i class="fa-solid fa-pen-to-square"></i>ediatr</button></td>
+            <td><button class="btn btn-outline-danger" (click)="borrar(producto)"><i class="fa-regular fa-trash-can"></i>eliminar</button></td>           
+        </tr>
+    </tbody>
+</table>
